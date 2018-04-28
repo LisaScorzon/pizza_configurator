@@ -2,62 +2,44 @@ import React, {PureComponent} from 'react'
 import PropTypes from 'prop-types'
 import {connect} from 'react-redux'
 import BasesForm from './BasesForm'
+import {bases} from '../reducers/bases'
+import {selectBase} from '../actions/build'
 
 
 
 
 class BasesList extends PureComponent {
-    static propTypes = {
-      bases: PropTypes.arrayOf(PropTypes.shape({
-        id: PropTypes.number.isRequired,
-        name: PropTypes.string.isRequired,
-        price: PropTypes.number.isRequired
-      })).isRequired
-    }
+  constructor(props) {
+    super(props);
+    this.state = {value: 'coconut'};
 
-    // componentWillMount() {
-    //   this.props()
-    // }
+    this.handleChange = this.handleChange.bind(this);
+    this.handleSubmit = this.handleSubmit.bind(this);
+  }
+
+  handleChange(event) {
+    this.setState({value: event.target.value});
+  }
+
+  handleSubmit(event) {
+    alert('Your Base is: ' + this.state.value);
+    event.preventDefault();
+  }
   
     render() {
-      const {bases} = this.props
       return (
-        <div>
-          <h1>All Bases</h1>
-              
-  
-          <table>
-            <thead>
-              <tr>
-                <th> ID </th>
-                <br/>
-                <th>Size</th>
-                <br/>
-
-
-                <th>Price</th>
-              </tr>
-            </thead>
-            <tbody>
-              { bases.map(base => (<tr key={base.id}>
-                <td>{base.id}</td>
-                 <br/>
-                 
-                 <td>{base.size}</td>
-                 <br/> 
-               
-
-                <td>&euro; {base.price}</td>
-                
-                <BasesForm onSubmit={this.selectBase} />
-                
-              </tr>)) }
-            </tbody>
-                  </table>
-                  <button className="btn btn-default" type="submit">Save</button>
-       
-        
-               </div>
+        <form onSubmit={this.handleSubmit}>
+          <label>
+            Pick your Pizza Base:
+            <select value={this.state.value} onChange={this.handleChange}>
+              <option value="25cm NY Style">25cm NY Style</option>
+              <option value="30cm NY Style">30cm NY Style</option>
+              <option value="35cm NY Style">35cm NY Style</option>
+              <option value="20cm NY Style">20cm NY Style</option>
+            </select>
+          </label>
+          <input type="submit" value="Submit" />
+        </form>
       )
     }
   }
@@ -70,6 +52,8 @@ class BasesList extends PureComponent {
   }
 
   
-  export default connect(mapStateToProps, {}
+  export default connect(mapStateToProps, {
+    selectBase,
+  }
   )(BasesList)
   

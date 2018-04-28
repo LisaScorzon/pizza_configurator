@@ -1,6 +1,6 @@
 import React, {PureComponent} from 'react'
 
-class SaucesForm extends React.Component {
+class ToppingsForm extends React.Component {
 	constructor(props) {
     super(props);
     this.state = {value: ''};
@@ -15,7 +15,7 @@ class SaucesForm extends React.Component {
         
           }
           handleSubmit(e) {
-            alert('A name was submitted: ' + this.state.value);
+            alert('A topping was submitted: ' + this.state.value);
             e.preventDefault();
           }
 
@@ -24,7 +24,7 @@ class SaucesForm extends React.Component {
             
         
        
-        render() {
+          render() {
             const initialValues = this.props.initialValues || {}
            
             return (
@@ -45,10 +45,4 @@ class SaucesForm extends React.Component {
         )
     }}
 
-export default SaucesForm
-
-/* handleFormSubmit: (formSubmitEvent) => {
-                formSubmitEvent.preventDefault();
-              
-                console.log('You have selected:', this.state.selectedOption);
-              }*/
+export default ToppingsForm

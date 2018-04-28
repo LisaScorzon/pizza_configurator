@@ -1,4 +1,4 @@
-const bases = [
+export const bases = [
     {
     id:1,
     size: '25cm NY Style',
@@ -56,7 +56,7 @@ const bases = [
     }
   ]
 
-  const toppings = [
+  export const toppings = [
     {
     id:1,
     name: 'Pineapple',

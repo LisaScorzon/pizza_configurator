@@ -1,6 +1,9 @@
 import React, {PureComponent} from 'react'
 import PropTypes from 'prop-types'
 import {connect} from 'react-redux'
+import {toppings} from '../reducers/toppings'
+import {selectToppings} from '../actions/build'
+import toppingsForm from './ToppingsForm'
 
 
 
@@ -29,12 +32,10 @@ class ToppingsList extends PureComponent {
               <tr>
               
                 <th>ID</th>
+
+
                 
-                <br/>
-               
-                <th>Name</th>
-              
-               
+            <th>Name</th>
                 <th>Price</th>
               </tr>
             </thead>
@@ -45,9 +46,11 @@ class ToppingsList extends PureComponent {
                 <td>{topping.name}</td>
                 
                 <td>&euro; {topping.price}</td>
-              </tr>)) }
+                <toppingsForm onSubmit={this.selectToppings}/>   
+                </tr>)) }
             </tbody>
                   </table>
+                  <button onClick={ () => this.selectToppings }>Save</button>
         </div>
       )
     }

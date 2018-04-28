@@ -2,59 +2,45 @@ import React, {PureComponent} from 'react'
 import PropTypes from 'prop-types'
 import {connect} from 'react-redux'
 import SaucesForm from './SaucesForm'
-import {SelectSauce} from '../actions/selectSauce'
+import {SelectSauce} from '../actions/build'
+import {sauces} from '../ingredients/ingredients'
 
 
 
 
 
 class SaucesList extends PureComponent {
-    static propTypes = {
-      bases: PropTypes.arrayOf(PropTypes.shape({
-        id: PropTypes.number.isRequired,
-        name: PropTypes.string.isRequired,
-        price: PropTypes.number.isRequired
-      })).isRequired
-    }
+  constructor(props) {
+    super(props);
+    this.state = {value: 'coconut'};
 
-    componentWillMount() {
-      this.props.selectSauce()
-    }
+    this.handleChange = this.handleChange.bind(this);
+    this.handleSubmit = this.handleSubmit.bind(this);
+  }
+
+  handleChange(event) {
+    this.setState({value: event.target.value});
+  }
+
+  handleSubmit(event) {
+    alert('Your Base is: ' + this.state.value);
+    event.preventDefault();
+  }
   
     render() {
-      const {sauces} = this.props
       return (
-        <div>
-          <h2>All sauces</h2>
-  
-          <table>
-            <thead>
-              <tr>
-                <th>ID</th>
-                <br/>
-
-                <th>Name</th>
-               
-                <th>Price</th>
-              </tr>
-            </thead>
-            <tbody>
-              { sauces.map(sauce => (<tr key={sauce.id}>
-                <td>{sauce.id}</td>
-                <br/>
-                <td>{sauce.name}</td>
-                 
-                <td>&euro; {sauce.price}</td>
-                <SaucesForm onSubmit={this.selectSauce} />
-                
-              </tr>)) }
-            </tbody>
-            <td><button onClick={ () => this.saveSauce }>X</button></td>
-                  </table>
-                  
-                  
-                  
-        </div>
+        <form onSubmit={this.handleSubmit}>
+          <label>
+            Pick your Pizza Base:
+            <select value={this.state.value} onChange={this.handleChange}>
+              <option value="White Sauce">White Sauce</option>
+              <option value="Red Sauce">Red Sauce</option>
+              <option value="Double red sauce">Double red sauce</option>
+              <option value="Mix it up">Mix it up</option>
+            </select>
+          </label>
+          <input type="submit" value="Submit" />
+        </form>
       )
     }
   }

@@ -2,18 +2,25 @@
 import { SELECT_BASE } from '../actions/build'
 
 
-export default function(state = null, action = {}) {
-  switch(action.type) {
+// export default function(state = null, action = {}) {
+//   switch(action.type) {
+//     case SELECT_BASE :
+//       return action.payload.value
+//     default :
+//       return state
+//   }
+//}
+export default function (state = bases, action) {
+  switch (action.type) {
     case SELECT_BASE :
-      return action.payload.value
-    default :
+    return action.payload.value
+    default:
       return state
   }
 }
 
 
-
-const bases = [
+export const bases = [
   {
   id:1,
   size: '25cm NY Style',

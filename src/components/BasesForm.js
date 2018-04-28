@@ -1,4 +1,8 @@
 import React, {PureComponent} from 'react'
+import {connect} from 'react-redux'
+import {SELECT_BASE} from '../actions/build'
+import {bases} from '../reducers/bases'
+
 
 class BasesForm extends PureComponent {
 	state = {}
@@ -13,11 +17,8 @@ class BasesForm extends PureComponent {
 
 	render() {
         const initialValues = this.props.initialValues || {}
-        handleFormSubmit: (formSubmitEvent) => {
-            formSubmitEvent.preventDefault();
+      
           
-            console.log('You have selected:', this.state.selectedOption);
-          }
         return (
 		<form onSubmit={this.handleFormSubmit}>
         <div className="1">
