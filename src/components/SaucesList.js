@@ -2,6 +2,8 @@ import React, {PureComponent} from 'react'
 import PropTypes from 'prop-types'
 import {connect} from 'react-redux'
 import SaucesForm from './SaucesForm'
+import {SelectSauce} from '../actions/selectSauce'
+
 
 
 
@@ -15,9 +17,9 @@ class SaucesList extends PureComponent {
       })).isRequired
     }
 
-    // componentWillMount() {
-    //   this.props()
-    // }
+    componentWillMount() {
+      this.props.selectSauce()
+    }
   
     render() {
       const {sauces} = this.props
@@ -44,9 +46,13 @@ class SaucesList extends PureComponent {
                  
                 <td>&euro; {sauce.price}</td>
                 <SaucesForm onSubmit={this.selectSauce} />
+                
               </tr>)) }
             </tbody>
+            <td><button onClick={ () => this.saveSauce }>X</button></td>
                   </table>
+                  
+                  
                   
         </div>
       )

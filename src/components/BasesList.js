@@ -50,9 +50,11 @@ class BasesList extends PureComponent {
                 <td>&euro; {base.price}</td>
                 
                 <BasesForm onSubmit={this.selectBase} />
+                
               </tr>)) }
             </tbody>
                   </table>
+                  <button className="btn btn-default" type="submit">Save</button>
        
         
                </div>

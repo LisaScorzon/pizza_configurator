@@ -1,12 +1,16 @@
 
+import { SELECT_BASE } from '../actions/build'
 
 
-export default function (state = bases, action) {
-  switch (action.type) {
-    default:
+export default function(state = null, action = {}) {
+  switch(action.type) {
+    case SELECT_BASE :
+      return action.payload.value
+    default :
       return state
   }
 }
+
 
 
 const bases = [

@@ -3,27 +3,28 @@ import React, {PureComponent} from 'react'
 class BasesForm extends PureComponent {
 	state = {}
 
-	handleSubmit = (e) => {
-		e.preventDefault()
-		this.props.onSubmit(this.state)
+	handleOptionChange = (e) => {
+        this.setState({
+            selectedOption: e.target.value
+          })
+          
 	}
-
-	handleChange = (event) => {
-		const {name, value} = event.target
-
-		this.setState({
-		  [name]: value
-		})
-	}
-
+    
 
 	render() {
         const initialValues = this.props.initialValues || {}
+        handleFormSubmit: (formSubmitEvent) => {
+            formSubmitEvent.preventDefault();
+          
+            console.log('You have selected:', this.state.selectedOption);
+          }
         return (
-		<form>
+		<form onSubmit={this.handleFormSubmit}>
         <div className="1">
           <label>
-            <input type="radio" value="option1" checked={this.state.selectedOption === 'option1'} />
+            <input type="radio" value="option1" 
+            checked={this.state.selectedOption === 'option1'}
+            onChange={this.handleOptionChange} /> 
             select me!
           </label>
         </div>

@@ -1,13 +1,17 @@
 
-export default function (state = sauces, action) {
-    switch (action.type) {
-      default:
-        return state
-    }
-  }
-  
+import { SELECT_SAUCE } from '../actions/build'
 
-const sauces = [
+
+export default function(state = null, action = {}) {
+  switch(action.type) {
+    case SELECT_SAUCE :
+      return action.payload.value
+    default :
+      return state
+  }
+}
+
+export const sauces = [
     {
     id:1,
     name: 'White sauce',
