@@ -1,6 +1,8 @@
 
-import menu from './menu'
-
+import bases from './bases'
+import sauces from './sauces'
 export default {
-  menu: menu
+  bases  : bases,
+  sauces : sauces
 }
+
