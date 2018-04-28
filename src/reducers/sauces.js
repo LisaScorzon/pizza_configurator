@@ -12,7 +12,7 @@ import { SELECT_SAUCE } from '../actions/build'
 //   }
 // }
 
-export default function (state = sauces, action) {
+export default function (state = null, action= {}) {
   switch (action.type) {
     case SELECT_SAUCE :
     return action.payload.value

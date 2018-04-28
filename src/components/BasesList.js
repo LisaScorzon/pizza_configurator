@@ -1,9 +1,9 @@
 import React, {PureComponent} from 'react'
-import PropTypes from 'prop-types'
 import {connect} from 'react-redux'
 import BasesForm from './BasesForm'
 import {bases} from '../reducers/bases'
 import {selectBase} from '../actions/build'
+import store from '../store'
 
 
 
@@ -11,7 +11,7 @@ import {selectBase} from '../actions/build'
 class BasesList extends PureComponent {
   constructor(props) {
     super(props);
-    this.state = {value: 'coconut'};
+    this.state = {value: 'pick one!'};
 
     this.handleChange = this.handleChange.bind(this);
     this.handleSubmit = this.handleSubmit.bind(this);
@@ -19,6 +19,7 @@ class BasesList extends PureComponent {
 
   handleChange(event) {
     this.setState({value: event.target.value});
+    store.dispatch(selectBase({value: event.target.value}))
   }
 
   handleSubmit(event) {

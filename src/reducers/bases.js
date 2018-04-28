@@ -10,7 +10,7 @@ import { SELECT_BASE } from '../actions/build'
 //       return state
 //   }
 //}
-export default function (state = bases, action) {
+export default function (state = null, action = {}) {
   switch (action.type) {
     case SELECT_BASE :
     return action.payload.value

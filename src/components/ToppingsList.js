@@ -6,63 +6,57 @@ import {selectToppings} from '../actions/build'
 import toppingsForm from './ToppingsForm'
 
 
+import { RadioGroup, RadioButton, ReversedRadioButton } from 'react-radio-buttons'
 
 
-class ToppingsList extends PureComponent {
-    static propTypes = {
-      toppings: PropTypes.arrayOf(PropTypes.shape({
-        id: PropTypes.number.isRequired,
-        name: PropTypes.string.isRequired,
-        price: PropTypes.number.isRequired
-      })).isRequired
-    }
 
-    // componentWillMount() {
-    //   this.props()
-    // }
+export class ToppingsList extends PureComponent{
+    constructor(props) {
+        super(props);
+                this.state = {
+                  radioState: true
+                }
+              }
+
   
+
     render() {
-      const {toppings} = this.props
-      return (
-        <div>
-          <h2>Pick your toppings! (max 3)</h2>
-  
-          <table>
-            <thead>
-              <tr>
-              
-                <th>ID</th>
 
 
-                
-            <th>Name</th>
-                <th>Price</th>
-              </tr>
-            </thead>
-            <tbody>
-              { toppings.map(topping => (<tr key={topping.id}>
-                <td>{topping.id}</td>
-                <br/>
-                <td>{topping.name}</td>
-                
-                <td>&euro; {topping.price}</td>
-                <toppingsForm onSubmit={this.selectToppings}/>   
-                </tr>)) }
-            </tbody>
-                  </table>
-                  <button onClick={ () => this.selectToppings }>Save</button>
-        </div>
-      )
-    }
-  }
-  
-  const mapStateToProps = function (state) {
-    return {
-      toppings: state.toppings,
-    
-    }
-  }
+return (
 
-  
-  export default connect(mapStateToProps, {}
-  )(ToppingsList)
+
+
+<RadioGroup 
+name= 'Toppings' value='green color'
+color='green'
+selectedValue={this.state.selectedValue}
+onChange={ this.handleChange } vertical>
+  <RadioButton value="Pineapple">
+  Pineapple
+  </RadioButton>
+  <RadioButton value="Corn">
+  Corn
+  </RadioButton>
+  <RadioButton value="Olives (green)">
+  Olives (green)
+  </RadioButton>
+  <RadioButton value="Red onion">
+  Red onion
+  </RadioButton>
+  <RadioButton value="Spinach">
+  Spinach
+  </RadioButton>
+  <RadioButton value="Cherry tomatoes">
+  Cherry tomatoes
+  </RadioButton>
+  <RadioButton value="Chicken">
+  Chicken
+  </RadioButton>
+</RadioGroup>
+
+)}
+}
+
+// export default connect(mapStateToProps, {}
+// )(ToppingsList)

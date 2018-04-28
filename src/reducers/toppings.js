@@ -1,10 +1,15 @@
 import { SELECT_TOPPINGS } from '../actions/build'
 //import { REMOVE_TOPPING } from '../actions/build'
 
-export default function (state = toppings, action) {
+export default function (state = null, action= {}) {
   switch (action.type) {
     case SELECT_TOPPINGS :
-    return action.payload.value
+    if (state.length < 3) {
+      return state.concat(action.payload)
+  } else {
+      return state
+  }
+    //return action.payload.value
     default:
       return state
   }

@@ -5,7 +5,9 @@ import {bases} from '../reducers/bases'
 
 
 class BasesForm extends PureComponent {
-	state = {}
+	state = {
+    value : ''
+  }
 
 	handleOptionChange = (e) => {
         this.setState({
@@ -19,19 +21,10 @@ class BasesForm extends PureComponent {
         const initialValues = this.props.initialValues || {}
       
           
-        return (
-		<form onSubmit={this.handleFormSubmit}>
-        <div className="1">
-          <label>
-            <input type="radio" value="option1" 
-            checked={this.state.selectedOption === 'option1'}
-            onChange={this.handleOptionChange} /> 
-            select me!
-          </label>
-        </div>
-      </form>
+        return 
+		
 
-        )
+        
     }
 }
 export default BasesForm

@@ -2,8 +2,9 @@ import React, {PureComponent} from 'react'
 import PropTypes from 'prop-types'
 import {connect} from 'react-redux'
 import SaucesForm from './SaucesForm'
-import {SelectSauce} from '../actions/build'
+import {selectSauce} from '../actions/build'
 import {sauces} from '../ingredients/ingredients'
+import store from '../store'
 
 
 
@@ -20,6 +21,7 @@ class SaucesList extends PureComponent {
 
   handleChange(event) {
     this.setState({value: event.target.value});
+    store.dispatch(selectSauce({value: event.target.value}))
   }
 
   handleSubmit(event) {

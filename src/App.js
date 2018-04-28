@@ -5,7 +5,7 @@ import bases from './reducers/bases'
 import BasesList from './components/BasesList'
 import SaucesList from './components/SaucesList'
 import sauces from './reducers/sauces'
-import ToppingsList from './components/ToppingsList'
+import {ToppingsList} from './components/ToppingsList'
 import toppings from './reducers/toppings'
 
 
@@ -24,7 +24,7 @@ class App extends Component {
         </p>
         <div>
           <h4>
-        <BasesList bases={ bases } />
+        <BasesList />
             </h4>
             <h4>
             <SaucesList sauces={ sauces } />
