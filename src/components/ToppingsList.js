@@ -1,14 +1,13 @@
 import React, {PureComponent} from 'react'
 import PropTypes from 'prop-types'
 import {connect} from 'react-redux'
-import SaucesForm from './SaucesForm'
 
 
 
 
-class SaucesList extends PureComponent {
+class ToppingsList extends PureComponent {
     static propTypes = {
-      bases: PropTypes.arrayOf(PropTypes.shape({
+      toppings: PropTypes.arrayOf(PropTypes.shape({
         id: PropTypes.number.isRequired,
         name: PropTypes.string.isRequired,
         price: PropTypes.number.isRequired
@@ -20,34 +19,35 @@ class SaucesList extends PureComponent {
     // }
   
     render() {
-      const {sauces} = this.props
+      const {toppings} = this.props
       return (
         <div>
-          <h2>All sauces</h2>
+          <h2>Pick your toppings! (max 3)</h2>
   
           <table>
             <thead>
               <tr>
+              
                 <th>ID</th>
+                
                 <br/>
-
+               
                 <th>Name</th>
+              
                
                 <th>Price</th>
               </tr>
             </thead>
             <tbody>
-              { sauces.map(sauce => (<tr key={sauce.id}>
-                <td>{sauce.id}</td>
+              { toppings.map(topping => (<tr key={topping.id}>
+                <td>{topping.id}</td>
                 <br/>
-                <td>{sauce.name}</td>
-                 
-                <td>&euro; {sauce.price}</td>
-                <SaucesForm onSubmit={this.selectSauce} />
+                <td>{topping.name}</td>
+                
+                <td>&euro; {topping.price}</td>
               </tr>)) }
             </tbody>
                   </table>
-                  
         </div>
       )
     }
@@ -55,11 +55,11 @@ class SaucesList extends PureComponent {
   
   const mapStateToProps = function (state) {
     return {
-      sauces: state.sauces,
+      toppings: state.toppings,
     
     }
   }
 
   
   export default connect(mapStateToProps, {}
-  )(SaucesList)
+  )(ToppingsList)

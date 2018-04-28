@@ -1,6 +1,7 @@
 import React, {PureComponent} from 'react'
 import PropTypes from 'prop-types'
 import {connect} from 'react-redux'
+import BasesForm from './BasesForm'
 
 
 
@@ -23,12 +24,13 @@ class BasesList extends PureComponent {
       return (
         <div>
           <h1>All Bases</h1>
+              
   
           <table>
             <thead>
               <tr>
-                <th></th>
                 <th> ID </th>
+                <br/>
                 <th>Size</th>
                 <br/>
 
@@ -42,15 +44,18 @@ class BasesList extends PureComponent {
                  <br/>
                  
                  <td>{base.size}</td>
-                  <br/>
-                  <br/>
-
+                 <br/> 
+               
 
                 <td>&euro; {base.price}</td>
+                
+                <BasesForm onSubmit={this.selectBase} />
               </tr>)) }
             </tbody>
                   </table>
-        </div>
+       
+        
+               </div>
       )
     }
   }
