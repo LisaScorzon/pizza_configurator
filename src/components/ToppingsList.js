@@ -3,60 +3,85 @@ import PropTypes from 'prop-types'
 import {connect} from 'react-redux'
 import {toppings} from '../reducers/toppings'
 import {selectToppings} from '../actions/build'
-import toppingsForm from './ToppingsForm'
-
-
+import store from '../store'
 import { RadioGroup, RadioButton, ReversedRadioButton } from 'react-radio-buttons'
 
 
 
 export class ToppingsList extends PureComponent{
     constructor(props) {
-        super(props);
-                this.state = {
-                  radioState: true
-                }
-              }
+    super(props);
+    this.state = {value: 'pick one!'}
+    
+              
 
+  this.handleSubmit = this.handleSubmit.bind(this);
+   this.handleSubmit = this.handleSubmit.bind(this);
+          
+}
+  handleSubmit(event) {
+  this.setState(event.target.value);
+    store.dispatch(selectToppings( event.target.value))
+}
+          
+   handleSubmit(event) {
+   alert('Your topping is: ' + this.state.value);
+   event.preventDefault();
+   }
+           
+   
+render() {
   
+  return (
+  <form onSubmit={this.handleSubmit}>
+    
+    <legend>Choose your Toppings; max 3 per pizza,
+            each topping is 0.50
+    </legend>
+     
+        <input type="checkbox" value="Pineapple" name="Pineapple" value="Pineapple"/>
+        <label for="Pineapple">Pineapple</label>
+      
+        <input type="checkbox" id="Corn" name="Corn" value="Corn"/>
+        <label for="Corn">Corn</label>
+      
+        <input type="checkbox" id="Olives (green)" name="Olives (green)" value="Olives (green)"/>
+        <label for="Olives (green)">Olives (green)</label>
 
-    render() {
+      <input type="checkbox" id="Red onion" name="Red onion" value="Red onion"/>
+        <label for="Red onion">Red onion</label>
+      
+        <input type="checkbox" id="Spinach" name="Spinach" value="Spinach"/>
+        <label for="Spinach">Spinach</label>
 
+        <input type="checkbox" id="Cherry tomatoes" name="Cherry tomatoes" value="Cherry tomatoes"/>
+        <label for="Cherry tomatoes">Cherry tomatoes</label>
 
-return (
+        <input type="checkbox" id="Chicken" name="Chicken" value="Chicken"/>
+        <label for="Chicken">Chicken</label>
+      
 
+     
+        <button type="submit">Submit form</button>
+     
+  </form>
+  
+   
 
-
-<RadioGroup 
-name= 'Toppings' value='green color'
-color='green'
-selectedValue={this.state.selectedValue}
-onChange={ this.handleChange } vertical>
-  <RadioButton value="Pineapple">
-  Pineapple
-  </RadioButton>
-  <RadioButton value="Corn">
-  Corn
-  </RadioButton>
-  <RadioButton value="Olives (green)">
-  Olives (green)
-  </RadioButton>
-  <RadioButton value="Red onion">
-  Red onion
-  </RadioButton>
-  <RadioButton value="Spinach">
-  Spinach
-  </RadioButton>
-  <RadioButton value="Cherry tomatoes">
-  Cherry tomatoes
-  </RadioButton>
-  <RadioButton value="Chicken">
-  Chicken
-  </RadioButton>
-</RadioGroup>
-
-)}
+    )
+  }
 }
 
-// export default connect(mapStateToProps, {}
-// )(ToppingsList)
+
+const mapStateToProps = function (state) {
+  return {
+    toppings: state.toppings,
+  
+  }
+}
+
+export default connect(mapStateToProps, {
+  selectToppings
+}
+)(ToppingsList)
+

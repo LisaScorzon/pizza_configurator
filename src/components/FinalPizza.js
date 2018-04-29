@@ -5,17 +5,16 @@ import Costs from './costs'
 
 class FinalPizza extends PureComponent {
 
-// function for calculating cost
 
   render() {
     return(
       <div className="finalPizza">
-        <h3>Chozen Pizza:</h3>
-        <h6>BASE:</h6>
+        <h3>Your pizza :</h3>
+        <h6>your base:</h6>
         <p>  {this.props.base} </p>
-        <h6>SAUCE:</h6>
+        <h6>your sauce:</h6>
         <p>  {this.props.sauce} </p>
-        <h6>TOPPINGS:</h6>
+        <h6>did you add toppingsù':</h6>
         <ul> 
         {
             Object.values(this.props.toppings).map((name, i) => <li key={name}> {name} </li>)

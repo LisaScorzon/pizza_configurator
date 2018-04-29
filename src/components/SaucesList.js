@@ -1,7 +1,7 @@
 import React, {PureComponent} from 'react'
 import PropTypes from 'prop-types'
 import {connect} from 'react-redux'
-import SaucesForm from './SaucesForm'
+//import SaucesForm from './SaucesForm'
 import {selectSauce} from '../actions/build'
 import {sauces} from '../ingredients/ingredients'
 import store from '../store'
@@ -13,7 +13,7 @@ import store from '../store'
 class SaucesList extends PureComponent {
   constructor(props) {
     super(props);
-    this.state = {value: 'coconut'};
+    this.state = {value: ''};
 
     this.handleChange = this.handleChange.bind(this);
     this.handleSubmit = this.handleSubmit.bind(this);
@@ -25,7 +25,7 @@ class SaucesList extends PureComponent {
   }
 
   handleSubmit(event) {
-    alert('Your Base is: ' + this.state.value);
+    alert('Your Sauce is: ' + this.state.value);
     event.preventDefault();
   }
   
@@ -33,7 +33,7 @@ class SaucesList extends PureComponent {
       return (
         <form onSubmit={this.handleSubmit}>
           <label>
-            Pick your Pizza Base:
+            Pick your favorite pizza sauce:
             <select value={this.state.value} onChange={this.handleChange}>
               <option value="White Sauce">White Sauce</option>
               <option value="Red Sauce">Red Sauce</option>
