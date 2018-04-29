@@ -2,8 +2,7 @@ import React, { PureComponent } from 'react'
 import { connect } from 'react-redux'
 import Costs from './Costs'
 import TurboDrone from './Drone'
-//import { bases, sauces, toppings } from '../ingredients/ingredients'
-
+import { bases, sauces, toppings } from '../ingredients/ingredients'
 
 class FinalPizza extends PureComponent {
 
@@ -21,6 +20,7 @@ class FinalPizza extends PureComponent {
         <p>&euro; <Costs/></p>
         <h6> final price including delivery is:</h6>
         <p>&euro; < TurboDrone/> </p>
+        
 
         
       </div>

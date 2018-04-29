@@ -4,6 +4,7 @@ export const SELECT_TOPPINGS = 'SELECT_TOPPINGS'
 export const SELECT_SAUCE = 'SELECT_SAUCE'
 export const REMOVE_TOPPING = 'REMOVE_TOPPING'
 export const DRONE_DELIVERY='DRONE_DELIVERY'
+export const ADD_PRICE='ADD_PRICE'
 
 
 
@@ -42,3 +43,11 @@ export const droneDelivery = ( delivery ) => {
     payload: delivery
   }
 }
+
+export const totalPrice = ( price ) => {
+  return {
+    type: ADD_PRICE,
+    payload: price
+  }
+}
+

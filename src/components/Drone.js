@@ -29,7 +29,7 @@ import React, { PureComponent } from 'react'
 
         droneDelivery() {
 
-            const droneDelivery = totalPrice + (totalPrice/100*10)
+            const droneDelivery = this.totalPrice + this.totalPrice/100*10
 
             
         }
@@ -53,8 +53,7 @@ return (
  
     </form>
    
-       
-            {this.droneDelivery()}
+    
             
        </div>
         )

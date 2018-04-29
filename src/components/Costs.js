@@ -2,6 +2,7 @@ import React, { PureComponent } from 'react'
 import { connect } from 'react-redux'
 import { bases, sauces, toppings, droneDelivery } from '../ingredients/ingredients'
 
+
 class Costs extends PureComponent {
 
     totalPrice() {
@@ -15,7 +16,7 @@ class Costs extends PureComponent {
         
     return  basePrice + saucePrice + toppingPrice
     }
-        
+       
    
 
     render() { 
@@ -23,17 +24,23 @@ class Costs extends PureComponent {
         return(
             <div>
             {this.totalPrice()}
+             <p> Total price with delivery: {this.totalPrice() +   (this.totalPrice()/100*10)}</p> 
             </div>
-        )
+           
+    
+                )
+            }
+  
+            
     }
-}
 
 
 function mapStateToProps(state){
     return {
       base: state.bases,
       sauce: state.sauces,
-      toppings: state.toppings
+      toppings: state.toppings,
+      totalPrice: state.totalPrice
     }
   }
   
