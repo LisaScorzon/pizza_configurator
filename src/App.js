@@ -7,6 +7,7 @@ import SaucesList from './components/SaucesList'
 import sauces from './reducers/sauces'
 import ToppingsList from './components/ToppingsList'
 import toppings from './reducers/toppings'
+import FinalPizza from './components/FinalPizza'
 
 
 
@@ -32,7 +33,9 @@ class App extends Component {
             <h4>
             <ToppingsList toppings={ toppings } />
             </h4>
-            
+            <h5>
+              <FinalPizza/>
+              </h5>
       </div>
       </div>
     );

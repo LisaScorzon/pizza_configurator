@@ -10,7 +10,8 @@ import store from '../store'
 class BasesList extends PureComponent {
   constructor(props) {
     super(props);
-    this.state = {value: 'pick one!'};
+    this.state = {value: 'pick one!'
+  ,price: ''};
 
     this.handleChange = this.handleChange.bind(this);
     this.handleSubmit = this.handleSubmit.bind(this);
@@ -18,11 +19,11 @@ class BasesList extends PureComponent {
 
   handleChange(event) {
     this.setState({value: event.target.value});
-    store.dispatch(selectBase({value: event.target.value}))
+    store.dispatch(selectBase({value: event.target.value, price : event. target.price}))
   }
 
   handleSubmit(event) {
-    alert('Your Base is: ' + this.state.value);
+    alert('Your Base is: ' + this.state.value + 'your price is:' + this.state.price);
     event.preventDefault();
   }
   
@@ -31,11 +32,11 @@ class BasesList extends PureComponent {
         <form onSubmit={this.handleSubmit}>
           <label>
             Pick your Pizza Base:
-            <select value={this.state.value} onChange={this.handleChange}>
-              <option value="25cm NY Style">25cm NY Style</option>
-              <option value="30cm NY Style">30cm NY Style</option>
-              <option value="35cm NY Style">35cm NY Style</option>
-              <option value="20cm NY Style">20cm NY Style</option>
+            <select value={this.state.value} price={this.state.price} onChange={this.handleChange}>
+              <option value="25cm NY Style" price="1">25cm NY Style</option>
+              <option value="30cm NY Style" price="1">30cm NY Style</option>
+              <option value="35cm NY Style" price="1">35cm NY Style</option>
+              <option value="20cm NY Style" price="1">20cm NY Style</option>
             </select>
           </label>
           <input type="submit" value="Submit" />
@@ -47,6 +48,7 @@ class BasesList extends PureComponent {
   const mapStateToProps = function (state) {
     return {
       bases: state.bases,
+      price: state.price
     
     }
   }

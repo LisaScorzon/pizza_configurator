@@ -1,17 +1,18 @@
 import React, { PureComponent } from 'react'
 import { connect } from 'react-redux'
-import { bases, sauces, toppings } from '../ingredientss/ingredientss'
+import { bases, sauces, toppings } from '../ingredients/ingredients'
 
 class Costs extends PureComponent {
 
-    totalCost() {
-        const baseCost = (this.props.base ? bases[this.props.base] : 0)
-        const sauceCost= (this.props.sauce ? sauces[this.props.sauce] : 0)
+    totalPrice() {
+        const basePrice = (this.props.base ? bases[this.props.base] : 0)
+        const saucePrice= (this.props.sauce ? sauces[this.props.sauce] : 0)
       
     //max three toppings- fixed price- 0.50e per item  
-        const toppingsCost= (this.props.toppings).map(topping => toppings[topping])
-                                                   .reduce((sum, val) => sum + val, 0)
-        return baseCost + sauceCost + toppingsCost
+       //  const toppingsPrice= [(this.props.toppings)*length]
+        
+        
+    return basePrice + saucePrice 
         
     }
     
@@ -19,7 +20,7 @@ class Costs extends PureComponent {
 
         return(
             <div>
-            {this.totalCost()}
+            {this.totalPrice()}
             </div>
         )
     }

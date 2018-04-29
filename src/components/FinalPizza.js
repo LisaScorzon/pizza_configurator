@@ -1,6 +1,10 @@
 import React, { PureComponent } from 'react'
 import { connect } from 'react-redux'
-import Costs from './costs'
+import Costs from './Costs'
+
+import bases from '../reducers/bases'
+import toppings from '../reducers/toppings'
+import sauces from '../reducers/sauces'
 
 
 class FinalPizza extends PureComponent {
@@ -14,12 +18,9 @@ class FinalPizza extends PureComponent {
         <p>  {this.props.base} </p>
         <h6>your sauce:</h6>
         <p>  {this.props.sauce} </p>
-        <h6>did you add toppingsù':</h6>
-        <ul> 
-        {
-            Object.values(this.props.toppings).map((name, i) => <li key={name}> {name} </li>)
-        }
-        </ul>
+        <h6>did you add toppings':</h6>
+        <p>{this.props.toppings}</p>
+        
         <Costs/>
       </div>
       )
