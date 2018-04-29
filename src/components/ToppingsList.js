@@ -11,7 +11,8 @@ import store from '../store'
  class ToppingsList extends PureComponent{
     constructor(props) {
     super(props);
-    this.state = {checked: []}
+    //this.state = {checked: []}
+    this.state = {value: ''}
     
               
 
@@ -35,38 +36,37 @@ handleChange = (e) => {
 render() {
   return (
 
-//onSubmit={this.handleSubmit}
 
-  <form >
+
+  <form onSubmit={this.handleSubmit}>
     <fieldset value={this.state.value} onChange={this.handleChange}>
     <legend>Choose your Toppings; max 3 per pizza,
             each topping is 0.50
     </legend>
     
      
-        <input type="checkbox" value="Pineapple" name="Pineapple" value="Pineapple" onChange={this.handleChange}/>
+        <input type="checkbox" value="Pineapple" name="Pineapple"  />
         <label for="Pineapple">Pineapple</label>
       
-        <input type="checkbox" id="Corn" name="Corn" value="Corn"onChange={this.handleChange}/>
+        <input type="checkbox" id="Corn" name="Corn" value="Corn"/>
         <label for="Corn">Corn</label>
       
-        <input type="checkbox" id="Olives (green)" name="Olives (green)" value="Olives (green)"onChange={this.handleChange}/>
+        <input type="checkbox" id="Olives (green)" name="Olives (green)" value="Olives (green)"/>
         <label for="Olives (green)">Olives (green)</label>
 
-      <input type="checkbox" id="Red onion" name="Red onion" value="Red onion"onChange={this.handleChange}/>
+      <input type="checkbox" id="Red onion" name="Red onion" value="Red onion"/>
         <label for="Red onion">Red onion</label>
       
-        <input type="checkbox" id="Spinach" name="Spinach" value="Spinach"onChange={this.handleChange}/>
+        <input type="checkbox" id="Spinach" name="Spinach" value="Spinach"/>
         <label for="Spinach">Spinach</label>
 
-        <input type="checkbox" id="Cherry tomatoes" name="Cherry tomatoes" value="Cherry tomatoes"onChange={this.handleChange}/>
+        <input type="checkbox" id="Cherry tomatoes" name="Cherry tomatoes" value="Cherry tomatoes"/>
         <label for="Cherry tomatoes">Cherry tomatoes</label>
 
-        <input type="checkbox" id="Chicken" name="Chicken" value="Chicken"onChange={this.handleChange}/>
+        <input type="checkbox" id="Chicken" name="Chicken" value="Chicken"/>
         <label for="Chicken">Chicken</label>
       
-       
-     
+    
         <input type="submit" value="Submit" />
         </fieldset> 
   </form>
@@ -78,7 +78,7 @@ render() {
 }
 
 
-const mapStateToProps = function (state) {
+const mapStateToProps = function (state, props) {
   return {
     toppings: state.toppings,
   
@@ -86,7 +86,7 @@ const mapStateToProps = function (state) {
 }
 
 export default connect(mapStateToProps, {
-  selectToppings,
+  selectToppings, removeTopping
 }
 )(ToppingsList)
 

@@ -48,7 +48,7 @@ class BasesList extends PureComponent {
   const mapStateToProps = function (state) {
     return {
       bases: state.bases,
-      price: state.price
+     
     
     }
   }

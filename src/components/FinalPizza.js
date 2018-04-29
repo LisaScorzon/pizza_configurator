@@ -16,7 +16,7 @@ class FinalPizza extends PureComponent {
         <h6>your sauce:</h6>
         <p>  {this.props.sauce} </p>
         <h6>did you add toppings':</h6>
-        <p>{this.props.toppings}</p>
+        <p>{this.props.toppings + " "}</p>
         
         <Costs/>
       </div>
