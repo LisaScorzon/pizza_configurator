@@ -7,23 +7,23 @@ export const REMOVE_TOPPING = 'REMOVE_TOPPING'
 
 
 
-export const selectBase = ( base , price) => {
+export const selectBase = ( base ) => {
   return {
     type: SELECT_BASE,
-    payload: base, price
+    payload: base
   }
 }
-export const selectToppings = ( toppings , price) => {
+export const selectToppings = ( toppings) => {
   return {
     type: SELECT_TOPPINGS,
-    payload: toppings, price
+    payload: toppings
   }
 }
 
-export const selectSauce = ( sauce, price ) => {
+export const selectSauce = ( sauce ) => {
   return {
     type: SELECT_SAUCE,
-    payload: sauce, price
+    payload: sauce
   }
 }
 
