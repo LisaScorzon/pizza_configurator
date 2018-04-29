@@ -6,6 +6,7 @@ import BasesList from './components/BasesList'
 import SaucesList from './components/SaucesList'
 import ToppingsList from './components/ToppingsList'
 import FinalPizza from './components/FinalPizza'
+import TurboDrone from './components/Drone'
 
 
 
@@ -35,6 +36,8 @@ class App extends Component {
               <FinalPizza/>
               </h5>
       </div>
+
+      <TurboDrone/>
       </div>
     );
   }
