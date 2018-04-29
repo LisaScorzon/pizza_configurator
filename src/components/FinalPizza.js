@@ -1,7 +1,7 @@
 import React, { PureComponent } from 'react'
 import { connect } from 'react-redux'
 import Costs from './Costs'
-import { bases, sauces, toppings } from '../ingredients/ingredients'
+//import { bases, sauces, toppings } from '../ingredients/ingredients'
 
 
 class FinalPizza extends PureComponent {
@@ -17,8 +17,8 @@ class FinalPizza extends PureComponent {
         <p>  {this.props.sauce} </p>
         <h6>did you add toppings':</h6>
         <p>{this.props.toppings + " "}</p>
+        <p>&euro; <Costs/></p>
         
-        <Costs/>
       </div>
       )
     }
