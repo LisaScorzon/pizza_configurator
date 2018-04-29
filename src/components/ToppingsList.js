@@ -1,7 +1,7 @@
 import React, {PureComponent} from 'react'
 import PropTypes from 'prop-types'
 import {connect} from 'react-redux'
-import {toppings} from '../reducers/toppings'
+import { toppings } from '../ingredients/ingredients'
 import {selectToppings} from '../actions/build'
 import store from '../store'
 

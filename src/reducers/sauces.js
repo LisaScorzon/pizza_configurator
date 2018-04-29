@@ -20,31 +20,31 @@ export default function (state = null, action= {}) {
       return state
   }
 }
-export const sauces = [
-  {
-  id:1,
-  name: 'White sauce',
-  price: '0 (included in price)',
-  },
+// export const sauces = [
+//   {
+//   id:1,
+//   name: 'White sauce',
+//   price: '0 (included in price)',
+//   },
   
-  {
-    id:2,
-  name: 'Red sauce',
-  price: '0 (included in price)',
+//   {
+//     id:2,
+//   name: 'Red sauce',
+//   price: '0 (included in price)',
 
 
-  }, 
+//   }, 
   
-  {
-    id:3,
-  name: 'Double red sauce',
-  price: '1.50',
+//   {
+//     id:3,
+//   name: 'Double red sauce',
+//   price: '1.50',
 
-  },
-  {
+//   },
+//   {
 
-    id:4,
-  name: 'Mix it up',
-  price: '0.50',
-  }
-]
+//     id:4,
+//   name: 'Mix it up',
+//   price: '0.50',
+//   }
+// ]

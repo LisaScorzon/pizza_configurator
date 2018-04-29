@@ -1,6 +1,6 @@
 import React, {PureComponent} from 'react'
 import {connect} from 'react-redux'
-import {bases} from '../reducers/bases'
+import { bases } from '../ingredients/ingredients'
 import {selectBase} from '../actions/build'
 import store from '../store'
 
