@@ -1,6 +1,6 @@
 import React, { PureComponent } from 'react'
 import { connect } from 'react-redux'
-import { bases, sauces, toppings } from '../ingredients/ingredients'
+import { bases, sauces, toppings, droneDelivery } from '../ingredients/ingredients'
 
 class Costs extends PureComponent {
 
@@ -13,11 +13,11 @@ class Costs extends PureComponent {
         console.log(toppingPrice.length) 
         
         
-    return basePrice + saucePrice + toppingPrice
+    return  basePrice + saucePrice + toppingPrice
+    }
         
-    
+   
 
-}
     render() { 
 
         return(

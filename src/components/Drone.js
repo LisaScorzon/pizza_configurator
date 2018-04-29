@@ -16,21 +16,29 @@ import React, { PureComponent } from 'react'
         
     }
     handleChange = (e) => {
-    if (e.target.checked === true &&<p><bold>Total</bold>: € {this.totalDelivery}</p>){
+    if (e.target.checked === true &&<p><bold>Total</bold>: € {this.totalPrice}</p>){
         store.dispatch(droneDelivery(e.target.value))
     } else {
-        e.target.checked === false &&<p><bold>Total</bold>: € {this.totalDelivery}</p>
+        e.target.checked === false &&<p><bold>Total</bold>: € {this.droneDelivery}</p>
     }
     }
     handleSubmit(event) {
         alert('You choose: ' + this.state.value);
         event.preventDefault();
         }
+
+        droneDelivery() {
+
+            const droneDelivery = totalPrice + (totalPrice/100*10)
+
+            
+        }
+    
                 
 render() {
     
 return (
-
+<div>
      <form onSubmit={this.handleSubmit}>
         <fieldset value={this.state.value} onChange={this.handleChange}>
     
@@ -45,6 +53,10 @@ return (
  
     </form>
    
+       
+            {this.droneDelivery()}
+            
+       </div>
         )
     }
     }
