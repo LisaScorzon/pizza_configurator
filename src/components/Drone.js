@@ -4,32 +4,37 @@ import React, { PureComponent } from 'react'
  import totalPrice  from './Costs'
 
  class TurboDrone extends PureComponent {
-    
-    handleSubmit(event) {
-        alert('You Picked: ' + this.state.value);
-        event.preventDefault();
-      }
-
-      drone() {
-          if (document.getElementById("DroneDelivery")=== true)
-          {
-            const delivery=(this.props.totalPrice)*0.10
-          }
-
+    constructor(props) {
+        super(props);
+        this.state = {
+            droneDelivery: "Normal"
         }
-     
-        render() {
+        
+    }
+ render() {
+    if (this.DroneDelivery === true &&<p><bold>Total</bold>: € {this.totalDelivery}</p>){
+
+    } else {
+        this.DroneDelivery === true &&<p><bold>Total</bold>: € {this.totalDelivery}</p>
+       
+    }
 
 
-        return (
-            <form onSubmit={this.handleSubmit} onChange={this.handleChange}>
-            <label>
-                Turbo Drone Delivery (additional cost of 10%): 
-                <input type="checkbox" value="DroneDelivery" id="DroneDelivery"  />
-                <label for="DroneDelivery"></label>
-            </label>
+return (
+
+     <form onSubmit={this.handleSubmit}>
+        <fieldset value={this.state.value} onChange={this.handleChange}>
+    
+        <legend>Turbo Drone Delivery (additional cost of 10%): 
+        </legend>
             
-            </form>
+                
+                <input type="checkbox" value="DroneDelivery" id="DroneDelivery"  />
+                <label for="DroneDelivery"> </label>
+            
+        </fieldset> 
+ 
+    </form>
         )
     }
 }

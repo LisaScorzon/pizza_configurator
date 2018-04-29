@@ -67,7 +67,7 @@ render() {
         <label for="Chicken">Chicken</label>
       
     
-        <input type="submit" value="Submit" />
+        
         </fieldset> 
   </form>
   

@@ -21,3 +21,17 @@ export const toppings = {
   "Cherry tomatoes": 0.50,
   "Chicken": 0.50,
   }
+
+  export const droneDelivery = [
+    {
+      id:"1",
+      name: "no delivery",
+      price: 0.0
+    },
+    {
+      id:"2",
+      name: "Turbo-Drone",
+      price: "10%"
+    }
+  
+  ]

@@ -3,6 +3,7 @@ export const SELECT_BASE = 'SELECT_BASE'
 export const SELECT_TOPPINGS = 'SELECT_TOPPINGS'
 export const SELECT_SAUCE = 'SELECT_SAUCE'
 export const REMOVE_TOPPING = 'REMOVE_TOPPING'
+export const DRONE_DELIVERY='DRONE_DELIVERY'
 
 
 
@@ -35,4 +36,9 @@ export const removeTopping = ( topping ) => {
     payload: topping
   }
 }
-
+export const droneDelivery = ( delivery ) => {
+  return {
+    type: DRONE_DELIVERY,
+    payload: delivery
+  }
+}
