@@ -1,5 +1,5 @@
 import React, { Component } from 'react';
-import logo from './logo.svg';
+import newAgePizza from './newAgePizza.png';
 import './App.css';
 import { toppings, sauces, bases } from './ingredients/ingredients'
 import BasesList from './components/BasesList'
@@ -16,7 +16,7 @@ class App extends Component {
     return (
       <div className="App">
         <header className="App-header">
-          <img src={logo} className="App-logo" alt="logo" />
+          <img src={newAgePizza} className="App-logo" alt="logo" />
           <h1 className="title">New Age Pizza</h1>
         </header>
         <h2> Pick your pizza base </h2>
