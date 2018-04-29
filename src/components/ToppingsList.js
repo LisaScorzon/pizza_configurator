@@ -4,25 +4,26 @@ import {connect} from 'react-redux'
 import {toppings} from '../reducers/toppings'
 import {selectToppings} from '../actions/build'
 import store from '../store'
-import { RadioGroup, RadioButton, ReversedRadioButton } from 'react-radio-buttons'
 
 
 
-export class ToppingsList extends PureComponent{
+
+ class ToppingsList extends PureComponent{
     constructor(props) {
     super(props);
     this.state = {value: 'pick one!'}
     
               
 
-  this.handleSubmit = this.handleSubmit.bind(this);
+    this.handleChange = this.handleChange.bind(this);
    this.handleSubmit = this.handleSubmit.bind(this);
           
 }
-  handleSubmit(event) {
-  this.setState(event.target.value);
-    store.dispatch(selectToppings( event.target.value))
+handleChange(event){
+  this.setState({value: event.target.value});
+    store.dispatch(selectToppings({value: event.target.value}))
 }
+
           
    handleSubmit(event) {
    alert('Your topping is: ' + this.state.value);
@@ -31,13 +32,13 @@ export class ToppingsList extends PureComponent{
            
    
 render() {
-  
   return (
   <form onSubmit={this.handleSubmit}>
-    
+    <fieldset value={this.state.value} onChange={this.handleChange}>
     <legend>Choose your Toppings; max 3 per pizza,
             each topping is 0.50
     </legend>
+    
      
         <input type="checkbox" value="Pineapple" name="Pineapple" value="Pineapple"/>
         <label for="Pineapple">Pineapple</label>
@@ -60,10 +61,10 @@ render() {
         <input type="checkbox" id="Chicken" name="Chicken" value="Chicken"/>
         <label for="Chicken">Chicken</label>
       
-
+       
      
         <button type="submit">Submit form</button>
-     
+        </fieldset> 
   </form>
   
    
@@ -81,7 +82,7 @@ const mapStateToProps = function (state) {
 }
 
 export default connect(mapStateToProps, {
-  selectToppings
+  selectToppings,
 }
 )(ToppingsList)
 

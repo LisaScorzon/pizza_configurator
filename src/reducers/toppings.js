@@ -4,12 +4,12 @@ import { SELECT_TOPPINGS } from '../actions/build'
 export default function (state = null, action= {}) {
   switch (action.type) {
     case SELECT_TOPPINGS :
-    if (state.length < 3) {
-      return state.concat(action.payload)
-  } else {
-      return state
-  }
-    //return action.payload.value
+  //   if (state.length < 3) {
+  //     return state.concat(action.payload)
+  // } else {
+  //     return state
+  // }
+    return action.payload.value
     default:
       return state
   }
