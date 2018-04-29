@@ -1,10 +1,7 @@
 import React, { PureComponent } from 'react'
 import { connect } from 'react-redux'
 import Costs from './Costs'
-
-import bases from '../reducers/bases'
-import toppings from '../reducers/toppings'
-import sauces from '../reducers/sauces'
+import { bases, sauces, toppings } from '../ingredients/ingredients'
 
 
 class FinalPizza extends PureComponent {

@@ -1,24 +1,24 @@
 import { SELECT_TOPPINGS } from '../actions/build'
-//import { REMOVE_TOPPING } from '../actions/build'
+import { REMOVE_TOPPING } from '../actions/build'
 
-export default function (state = null, action= {}) {
+
+export default function (state = [], action = {}) {
   switch (action.type) {
-    case SELECT_TOPPINGS :
-  //   if (state.length < 3) {
-  //     return state.concat(action.payload)
-  // } else {
-  //     return state
-  // }
-    return action.payload.value
-    default:
-      return state
+      case SELECT_TOPPINGS:
+          if (state.length < 3) {
+              return state.concat(action.payload)
+          } else {
+              return state
+          }
+
+      case REMOVE_TOPPING:
+          return state.filter(topping => topping !== action.payload)
+      default:
+          return state
   }
 }
-    // case REMOVE_TOPPING :
-    //     return state.filter(topping => topping !== action.payload)
-    // default :
-    //   return state
- 
+
+
 
 // export const toppings = [
 //     {

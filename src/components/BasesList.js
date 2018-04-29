@@ -19,11 +19,11 @@ class BasesList extends PureComponent {
 
   handleChange(event) {
     this.setState({value: event.target.value});
-    store.dispatch(selectBase({value: event.target.value, price : event. target.price}))
+    store.dispatch(selectBase({value: event.target.value}))
   }
 
   handleSubmit(event) {
-    alert('Your Base is: ' + this.state.value + 'your price is:' + this.state.price);
+    alert('Your Base is: ' + this.state.value);
     event.preventDefault();
   }
   
@@ -33,10 +33,10 @@ class BasesList extends PureComponent {
           <label>
             Pick your Pizza Base:
             <select value={this.state.value} price={this.state.price} onChange={this.handleChange}>
-              <option value="25cm NY Style" price="1">25cm NY Style</option>
-              <option value="30cm NY Style" price="1">30cm NY Style</option>
-              <option value="35cm NY Style" price="1">35cm NY Style</option>
-              <option value="20cm NY Style" price="1">20cm NY Style</option>
+              <option value="25cm NY Style" >25cm NY Style</option>
+              <option value="30cm NY Style" >30cm NY Style</option>
+              <option value="35cm NY Style" >35cm NY Style</option>
+              <option value="20cm NY Style" >20cm NY Style</option>
             </select>
           </label>
           <input type="submit" value="Submit" />

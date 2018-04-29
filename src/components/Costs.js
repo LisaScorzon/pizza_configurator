@@ -7,12 +7,13 @@ class Costs extends PureComponent {
     totalPrice() {
         const basePrice = (this.props.base ? bases[this.props.base] : 0)
         const saucePrice= (this.props.sauce ? sauces[this.props.sauce] : 0)
+        const toppingPrice= (this.props.topping ? toppings[this.props.topping] : 0)
       
     //max three toppings- fixed price- 0.50e per item  
        //  const toppingsPrice= [(this.props.toppings)*length]
         
         
-    return basePrice + saucePrice 
+    return basePrice + saucePrice + toppingPrice
         
     }
     

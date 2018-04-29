@@ -1,12 +1,10 @@
 import React, { Component } from 'react';
 import logo from './logo.svg';
 import './App.css';
-import bases from './reducers/bases'
+import { toppings, sauces, bases } from './ingredients/ingredients'
 import BasesList from './components/BasesList'
 import SaucesList from './components/SaucesList'
-import sauces from './reducers/sauces'
 import ToppingsList from './components/ToppingsList'
-import toppings from './reducers/toppings'
 import FinalPizza from './components/FinalPizza'
 
 
