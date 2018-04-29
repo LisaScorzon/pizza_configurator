@@ -36,8 +36,6 @@ class App extends Component {
               <FinalPizza/>
               </h5>
       </div>
-
-      <TurboDrone/>
       </div>
     );
   }

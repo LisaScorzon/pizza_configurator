@@ -11,18 +11,28 @@ class Costs extends PureComponent {
       
     //max three toppings- fixed price- 0.50e per item  
         const toppingPrice= (this.props.toppings).length * .5
+        
         console.log(toppingPrice.length) 
         
         
     return basePrice + saucePrice + toppingPrice
         
     }
+
+
+    deliveryPrice(){
+
+    const delivery=(this.props.totalPrice)*0.10
     
+
+
+}
     render(){
 
         return(
             <div>
             {this.totalPrice()}
+            {this.deliveryPrice()}
             </div>
         )
     }
