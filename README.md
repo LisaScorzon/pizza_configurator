@@ -1,4 +1,4 @@
-# Abizza Configurator #
+# Pizza Configurator #
 
 ### TO DO ###
 
