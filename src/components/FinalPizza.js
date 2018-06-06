@@ -11,12 +11,12 @@ class FinalPizza extends PureComponent {
     return(
       <div className="finalPizza">
         <h3>Your pizza :</h3>
-        <h6>your base:</h6>
-        <p>  {this.props.base} </p>
-        <h6>your sauce:</h6>
-        <p>  {this.props.sauce} </p>
-        <h6>did you add toppings':</h6>
-        <p>{this.props.toppings + " "}</p>
+        <h3>Base: {this.props.base}</h3>
+       
+        <h3>Sauce: {this.props.sauce} </h3>
+    
+        <h3>Toppings: {this.props.toppings + " "}</h3>
+       
         <p>&euro; <Costs/></p>
         <h6> final price including delivery is:</h6>
         <p>&euro; < TurboDrone/> </p>
