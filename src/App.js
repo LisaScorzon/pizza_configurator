@@ -8,6 +8,7 @@ import ToppingsList from './components/ToppingsList'
 import FinalPizza from './components/FinalPizza'
 import TurboDrone from './components/Drone'
 import TopBar from './components/TopBar';
+import SimpleSelect from './components/dropdown'
 
 
 
@@ -19,13 +20,13 @@ class App extends Component {
          <div>
         <TopBar/>
         </div>
-        
-        <h2 className='title'> Pick your pizza base </h2>
+        <h2 className='title'>La Pizza è Bella</h2>
         <p className="App-intro">
         </p>
         <div>
+  
           <h4>
-        <BasesList />
+        <BasesList bases= {bases}/>
             </h4>
             <h4>
             <SaucesList sauces={ sauces } />

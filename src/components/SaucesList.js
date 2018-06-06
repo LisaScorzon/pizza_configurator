@@ -39,7 +39,7 @@ class SaucesList extends PureComponent {
                       <option value="Mix it up">Mix it up</option>
                     </select>
                   </label>
-                  <input type="submit" value="Submit" />
+                  <input type="submit" value="Submit" className='submitButton' />
                 </form>
               )
             }
