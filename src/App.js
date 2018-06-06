@@ -7,6 +7,7 @@ import SaucesList from './components/SaucesList'
 import ToppingsList from './components/ToppingsList'
 import FinalPizza from './components/FinalPizza'
 import TurboDrone from './components/Drone'
+import TopBar from './components/TopBar';
 
 
 
@@ -14,12 +15,12 @@ import TurboDrone from './components/Drone'
 class App extends Component {
   render() {
     return (
-      <div className="App">
-        <header className="App-header">
-          <img src={newAgePizza} className="App-logo" alt="logo" />
-          <h1 className="title">New Age Pizza</h1>
-        </header>
-        <h2> Pick your pizza base </h2>
+      <div>
+         <div>
+        <TopBar/>
+        </div>
+        
+        <h2 className='title'> Pick your pizza base </h2>
         <p className="App-intro">
         </p>
         <div>
@@ -35,8 +36,9 @@ class App extends Component {
             <h5>
               <FinalPizza/>
               </h5>
-      </div>
-      </div>
+              </div>
+              </div>
+   
     );
   }
 }
